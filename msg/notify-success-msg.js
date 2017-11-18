@@ -6,20 +6,20 @@ module.exports = {
   data:
   {
       first:{
-          value:"digitaloceanbackup 's operation is successful",
-          color:"#219b00"
+          value: "Notify via wechat-notifier for successful msg.",
+          color: "#219b00"
       },
       keyword1: {
-          value:"Operation is succcessful",
-          color:"#173177"
+          value: "Operation is successful",
+          color: "#173177"
       },
       keyword2: {
-          value: "...",
+          value: "...", // date-time field
           color: "#173177"
       },
       remark: {
-          value:"No further action needed. We just had a new daily backup!",
-          color:"#173177"
+          value: "No further action needed. We just had a new daily backup!",
+          color: "#173177"
       }
   }
 };

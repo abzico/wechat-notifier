@@ -41,9 +41,12 @@ var _ = {
 
 	/**
 	 * Send success template message to pre-set authorized user.
+	 * @param {String} title Title
+	 * @param {String} msg Message
+	 * @param {String} remark Remark
 	 * @return {Object} Promise object.
 	 */
-	notifySuccessMessage: function() {
+	notifySuccessMessage: function(title, msg, remark) {
 
 		return new Promise((resolve, reject) => {
 			// get access token
@@ -57,7 +60,10 @@ var _ = {
 					// modify message to be sent
 					successMsgObj.touser = process.env.WECHAT_SU_OPENID;
 					successMsgObj.template_id = process.env.WECHAT_SUCCESS_TEMPLATE_ID;
-					successMsgObj.data.keyword2.value = 'Backed up Digitalocean server successfully!';
+					successMsgObj.data.first.value = title;
+					successMsgObj.data.keyword1.value = msg;
+					successMsgObj.data.keyword2.value = new Date().toString();
+					successMsgObj.data.remark.value = remark;
 
 					// send template message via api
 					var options = {
@@ -84,10 +90,14 @@ var _ = {
 
 	/**
 	 * Send failure template message to pre-set authorized user.
-	 * @param  {String} msg Message to send
+	 * @param {String} title Title
+	 * @param {String} alarmType Alarm type
+	 * @param {String} alarmLevel Alarm level
+	 * @param {String} msg msg string
+	 * @param {String} remark Remark string
 	 * @return {Object}     Promise object
 	 */
-	notifyFailMessage: function(msg) {
+	notifyFailMessage: function(title, alarmType, alarmLevel, msg, remark) {
 		return new Promise((resolve, reject) => {
 			// get access token
 			this.getAccessToken()
@@ -96,13 +106,16 @@ var _ = {
 					let access_token = res.access_token;
 
 					// deep clone template message to be sent
-					var failMsgObj = JSON.parse(JSON.stringify(successMsgTemplate));
+					var failMsgObj = JSON.parse(JSON.stringify(failMsgTemplate));
 					// modify message to be sent
 					failMsgObj.touser = process.env.WECHAT_SU_OPENID;
-					failMsgObj.template_id = process.env.WECHAT_SUCCESS_TEMPLATE_ID;
-					failMsgObj.data.keyword3.value = 'Failed to back up digitalocean server!';
+					failMsgObj.template_id = process.env.WECHAT_FAIL_TEMPLATE_ID;
+					failMsgObj.data.first.value = title;
+					failMsgObj.data.keyword1.value = alarmType;
+					failMsgObj.data.keyword2.value = alarmLevel;
+					failMsgObj.data.keyword3.value = msg;
 					failMsgObj.data.keyword4.value = new Date().toString();
-					failMsgObj.data.remark.value = msg;
+					failMsgObj.data.remark.value = remark;
 
 					// send template message via api
 					var options = {

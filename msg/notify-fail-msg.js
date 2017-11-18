@@ -1,16 +1,16 @@
-// ... is to be filled dynamically 
+// change its value dynamically as needed
 module.exports = {
   touser: "...",
   template_id: "...",
   topcolor: "#ff0000",
   data:
   {
-      first:{
-          value: "digitaloceanbackup operation failed!",
+      first: {
+          value: "Notify via wechat-notifier for failed msg.",
           color: "#ff0000"
       },
       keyword1: {
-          value: "digitaloceanbackup",
+          value: "wechat-notifier",
           color: "#173177"
       },
       keyword2: {
@@ -22,7 +22,7 @@ module.exports = {
           color: "#173177"
       },
       keyword4: {
-          value: "...",		// this is timestamp
+          value: "...",		// date-time field
           color: "#173177"
       },
       remark: {
