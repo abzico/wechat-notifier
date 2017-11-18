@@ -1,0 +1,29 @@
+{
+  "name": "wechat-notifier",
+  "version": "1.0.0",
+  "description": "WeChat notifier, notify message via WeChat official / subscription account with permission to send template message.",
+  "main": "wechatNotify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abzico/wechat-notifier.git"
+  },
+  "keywords": [
+    "wechat",
+    "message",
+    "template",
+    "message"
+  ],
+  "author": "Angry Baozi (abzi.co)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abzico/wechat-notifier/issues"
+  },
+  "homepage": "https://github.com/abzico/wechat-notifier#readme",
+  "dependencies": {
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
