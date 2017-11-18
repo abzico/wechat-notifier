@@ -51,7 +51,6 @@ var _ = {
 				.then((res) => {
 					// get access token
 					let access_token = res.access_token;
-					console.log(access_token);
 
 					// deep clone template message to be sent
 					var successMsgObj = JSON.parse(JSON.stringify(successMsgTemplate));
@@ -95,7 +94,6 @@ var _ = {
 				.then((res) => {
 					// get access token
 					let access_token = res.access_token;
-					console.log(access_token);
 
 					// deep clone template message to be sent
 					var failMsgObj = JSON.parse(JSON.stringify(successMsgTemplate));

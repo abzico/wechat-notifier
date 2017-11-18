@@ -1,6 +1,6 @@
 {
   "name": "wechat-notifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WeChat notifier, notify message via WeChat official / subscription account with permission to send template message.",
   "main": "wechatNotify.js",
   "scripts": {
