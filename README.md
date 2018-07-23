@@ -27,5 +27,9 @@ To be able to notify successful, or failed message to your WeChat account via yo
 
 You need to set all of above environment variables in order to make it works.
 
+# Installation
+
+This package is available via NPM see [wechat-notifier](https://www.npmjs.com/package/wechat-notifier), or you can just clone this repo.
+
 # License
 MIT, abzi.co
