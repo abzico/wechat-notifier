@@ -68,7 +68,7 @@ var _ = {
 					// send template message via api
 					var options = {
 						method: "POST",
-						uri: "https://api.wechat.com/cgi-bin/message/template/send?access_token=" + access_token,
+						uri: "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" + access_token,
 						body: successMsgObj,
 						json: true
 					};
@@ -120,7 +120,7 @@ var _ = {
 					// send template message via api
 					var options = {
 						method: "POST",
-						uri: "https://api.wechat.com/cgi-bin/message/template/send?access_token=" + access_token,
+						uri: "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" + access_token,
 						body: failMsgObj,
 						json: true
 					};
